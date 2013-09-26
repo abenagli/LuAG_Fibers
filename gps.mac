@@ -1,0 +1,46 @@
+#
+# Remember that air source is on the negative side of z!
+#
+
+# choose ref physics list
+/Rise_Bench/phys/addPhysics  emlivermore
+
+# set cuts for particles
+#/Rise_Bench/phys/setCuts 1.0
+
+# set verbose physics for the run
+#/Rise_Bench/phys/verbose 1
+
+# set max number of Cerenkov photons per step
+#/Rise_Bench/phys/cerenkovMaxPhotons 10000
+
+# set max number of beta change for Cerenkov
+#/Rise_Bench/phys/SetMaxBetaChangePerStep 10.0
+
+
+/run/initialize
+
+/gps/energy 511 keV
+/gps/particle gamma
+/gps/position 0 20 20 mm
+/gps/ang/type iso
+
+#### 10 degrees on theta and phi ####
+#/gps/ang/mintheta 1.48
+#/gps/ang/maxtheta 1.66
+#/gps/ang/minphi 1.48
+#/gps/ang/maxphi 1.66
+
+#### 10 degrees on phi but 130 degress on theta to have a 10 cm spread on the fiber ####
+#/gps/ang/mintheta 0.44
+#/gps/ang/maxtheta 2.71
+
+#### 6 degrees on phi but 120 degress on theta to have a 7 cm spread on the fiber ####
+/gps/ang/mintheta 0.52
+/gps/ang/maxtheta 2.62
+
+/gps/ang/minphi 1.52
+/gps/ang/maxphi 1.62
+
+
+/run/beamOn 3000
