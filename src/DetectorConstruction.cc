@@ -261,7 +261,7 @@ void DetectorConstruction::initializeMaterials(){
 	    gAbsorption = new TGraph ();
 	    gAbsorption->SetTitle("gAbsorption");
   	    gAbsorption->SetName("gAbsorption");
-		for (int j = 0; j < ScMaterial->GetMaterialPropertiesTable()->GetProperty("ABSLENGTH")->GetVectorLength(); j++){
+		for (unsigned int j = 0; j < ScMaterial->GetMaterialPropertiesTable()->GetProperty("ABSLENGTH")->GetVectorLength(); j++){
 			double energy = ScMaterial->GetMaterialPropertiesTable()->GetProperty("ABSLENGTH")->Energy(j);
         	gAbsorption ->SetPoint (j, energy, ScMaterial->GetMaterialPropertiesTable()->GetProperty("ABSLENGTH")->Value(energy)  );
        	}

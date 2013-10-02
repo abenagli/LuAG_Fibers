@@ -347,7 +347,7 @@ long int CreateSeed()
   	cout<<"PID  : "<<getpid()<<endl;
   
   	FILE * fp = fopen ("/proc/uptime", "r");
-  	int uptime,upsecs;
+  	int uptime,upsecs = 0;
   	if (fp != NULL)
     	{
       		char buf[BUFSIZ];
